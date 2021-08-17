@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+        <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+  <nav id="navbar">
+    <header>jQuery Tutorial</header>
+          <ul>
+            <li>
+              <a class="nav-link" href="#jQuery_Introduction">jQuery Introduction</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#jQuery_Get_Started">jQuery Get Started</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#jQuery_Syntax">jQuery Syntax</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#jQuery_Selectors">jQuery Selectors</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#jQuery_Events">jQuery Events</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#jQuery_Effect_Hide_Show">jQuery Effect - Hide/Show</a>
+            </li>
+             <li>
+              <a class="nav-link" href="#jQuery_Effect_Fade">jQuery Effect - Fade</a>
+            </li>
+             <li>
+              <a class="nav-link" href="#jQuery_Effect_Slide">jQuery Effect - Slide</a>
+            </li>
+              <li>
+              <a class="nav-link" href="#jQuery_Effect_Animate">jQuery Effect - Animate</a>
+            </li>
+             <li>
+              <a class="nav-link" href="#jQuery_Effect_Stop">jQuery Effect - stop()</a>
+            </li>
+              <li>
+              <a class="nav-link" href="#jQuery_Effect_Callback">jQuery Effect - Callback</a>
+            </li>
+             <li>
+              <a class="nav-link" href="#jQuery_Effect_Chaining">jQuery Effects - Chaining</a>
+            </li>
+          </ul>
+    </nav>
+  
+  <main id="main-doc">
+    
+    <section class="main-section" id="jQuery_Introduction">
+      <header>jQuery Introduction</header>
+      <article>        
+        <h3>What You Should Already Know</h3>
+        <p>Before you start studying jQuery, you should have a basic knowledge of:</p>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        
+      
+      <h3>What is jQuery?</h3>
+        <p>jQuery is a lightweight, "write less, do more", JavaScript library.</p>
+
+        <p>The purpose of jQuery is to make it much easier to use JavaScript on your websitesite.</p>
+      
+      <p>jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code.</p>
+
+      <p>jQuery also simplifies a lot of the complicated things from JavaScript, like AJAX calls and DOM manipulation.</p>
+
+        <p> The jQuery library contains the following features:</p>
+            <ul>
+              <li>HTML/DOM manipulation</li>
+              <li>CSS manipulation</li>
+              <li>HTML event methods</li>
+              <li>Effects and animations</li>
+              <li>AJAX</li>
+              <li>Utilities</li>
+          </ul>
+    
+  
+    <h3>Why jQuery?</h3>
+        <p>There are lots of other JavaScript libraries out there, but jQuery is probably the most popular, and also the most extendable.</p>
+
+        <p>Many of the biggest companies on the Web use jQuery, such as:</p>
+            <ul>
+                <li>Google</li>
+                <li>Microsoft</li>
+                <li>IBM</li>
+                <li>Netflix</li>
+            </ul>
+       
+      </article>
+    </section>
+    
+<hr>
+    
+    <section class="main-section" id="jQuery_Get_Started">
+      <header>jQuery Get Started</header>
+      <article>
+        <h3>Adding jQuery to Your Web Pages</h3>
+        <p>There are several ways to start using jQuery on your web site. You can:</p>
+          <ul>
+              <li>Download the jQuery library from jQuery.com</li>
+              <li>Include jQuery from a CDN, like Google</li>
+            </ul>
+        
+
+        <h3>Downloading jQuery</h3>
+        <p>There are two versions of jQuery available for downloading:</p>
+           <ul>
+              <li>Production version - this is for your live website because it has been minified and compressed</li>
+              <li>Development version - this is for testing and development (uncompressed and readable code)</li>
+          </ul>
+      
+        <p>Both versions can be downloaded from jQuery.com.</p>
+
+<p>The jQuery library is a single JavaScript file, and you reference it with the HTML <span class="tagstyle">&ltscript&gt</span> tag (notice that the <span class="tagstyle">&ltscript&gt</span> tag should be inside the <span class="tagstyle">&lthead&gt</span> section):</p>
+      <code>&lthead&gt
+    &ltscript src="jquery-3.5.1.min.js"&gt &lt/script&gt
+&lt/head&gt
+</code>
+        
+        <p>Tip: Place the downloaded file in the same directory as the pages where you wish to use it.
+        </p>
+
+              <h3>jQuery CDN</h3>
+              <p>
+              If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network).</p>
+
+        <p>Google is an example of someone who host jQuery:</p>
+        
+              <h5>Google CDN:</h5>
+                  <code>&lthead&gt 
+       &ltscript src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"&gt &lt/script&gt
+&lt/head&gt                  </code>  
+      </article>
+    </section>
+
+
+<hr>
+    <section class="main-section" id="jQuery_Syntax">
+      <header>jQuery Syntax</header>
+       <article>
+         <p>With jQuery you select (query) HTML elements and perform "actions" on them.</p>
+
+         <h3>jQuery Syntax</h3>
+        <p>The jQuery syntax is tailor-made for selecting HTML elements and performing some action on the element(s).
+<br><br>
+          Basic syntax is:<strong> $(selector).action()</strong>
+        <ul>
+             <li>A $ sign to define/access jQuery</li>
+             <li>A (selector) to "query (or find)" HTML elements</li>
+             <li>A jQuery action() to be performed on the element(s)</li>
+       </ul>
+Examples:
+      <br><br>
+      <span class="action tagstyle">$(this).hide()</span> - hides the current element.
+      <br><br>
+      <span class="action tagstyle">$("p").hide()</span> - hides all &ltp&gt elements.
+      <br><br>
+      <span class="action tagstyle">$(".test").hide()</span> - hides all elements with class="test".
+      <br><br>
+      <span class="action tagstyle">$("#test").hide()</span> - hides the element with id="test".
+         <br><br>
+    </p>
+      
+  <h3>The Document Ready Event</h3>
+      
+    <p>You might have noticed that all jQuery methods in our examples, are inside a document ready event:</p>
+      
+        <code>$(document).ready(<span style="color:blue;">function</span>(){
+                // jQuery methods go here...
+          });</code>
+  <p>
+This is to prevent any jQuery code from running before the document is finished loading (is ready).
+<br><br>
+It is good practice to wait for the document to be fully loaded and ready before working with it. This also allows you to have your JavaScript code before the body of your document, in the head section.
+<br><br>
+Here are some examples of actions that can fail if methods are run before the document is fully loaded:
+      <ul>
+        <li>Trying to hide an element that is not created yet</li>
+        <li>Trying to get the size of an image that is not loaded yet</li>
+      </ul>  
+      Tip: The jQuery team has also created an even shorter method for the document ready event:</p>
+
+      <code>$(<span style="color:blue;">function</span>(){
+               // jQuery methods go here...
+        });</code>
+  <p>
+Use the syntax you prefer. We think that the document ready event is easier to understand when reading the code.
+  </p>
+
+      </article>
+    </section>
+<hr>
+
+    <section class="main-section" id="jQuery_Selectors">
+      <header>jQuery Selectors</header>
+       <article>
+         <p>jQuery selectors allow you to select and manipulate HTML element(s).</p>
+          <p>
+jQuery selectors are used to "find" (or select) HTML elements based on their name, id, classes, types, attributes, values of attributes and much more. It's based on the existing CSS Selectors, and in addition, it has some own custom selectors.</p>
+<p>
+All selectors in jQuery start with the dollar sign and parentheses: $().</p>
+         
+         <h3>The element Selector</h3>
+         <p>The jQuery element selector selects elements based on the element name.</p>
+<p>
+  You can select all <span class="action tagstyle">&ltp&gt</span> elements on a page like this:
+<br>
+  <code>$("p")</code>
+  
+  <strong>Example:</strong>
+  <br>
+  When a user clicks on a button, all <span class="action tagstyle">&ltp&gt</span> elements will be hidden:
+
+  <code>$(document).ready(<span style="color:blue;">function</span>(){
+    &nbsp;&nbsp;&nbsp;$("button").click(<span style="color:blue;">function</span>(){
+    &nbsp;&nbsp;&nbsp;&nbsp;$("p").hide();
+  &nbsp;&nbsp;&nbsp;});
+  });  </code>
+      </p>
+         
+         <h3>The #id Selector</h3>
+         <p>The jQuery <span class="action tagstyle">#id</span> selector uses the id attribute of an HTML tag to find the specific element.
+<br><br>
+An id should be unique within a page, so you should use the #id selector when you want to find a single, unique element.
+<br><br>
+To find an element with a specific id, write a hash character, followed by the id of the HTML element:
+<br>
+  <code>$("#test")</code>
+  
+<strong>Example:</strong>
+<br>
+When a user clicks on a button, the element with id="test" will be hidden:
+<br>
+  <code>$(document).ready(<span style="color:blue;">function</span>(){
+    &nbsp;&nbsp;&nbsp;$("button").click(<span style="color:blue;">function</span>(){
+    &nbsp;&nbsp;&nbsp;&nbsp;$("#test").hide();
+  &nbsp;&nbsp;&nbsp;});
+  }); </code>   
+         </p>
+         
+         <h3>The .class Selector</h3>
+         <p>The jQuery <span class="action tagstyle">.class</span> selector finds elements with a specific class.
+<br><br>
+To find elements with a specific class, write a period character, followed by the name of the class:
+<br>
+  <code>$(".test")</code>
+  <strong>Example:</strong>
+<br>
+When a user clicks on a button, the elements with class="test" will be hidden:
+<br>
+  <code>$(document).ready(<span style="color:blue;">function</span>(){
+    &nbsp;&nbsp;&nbsp;$("button").click(<span style="color:blue;">function</span>(){
+    &nbsp;&nbsp;&nbsp;&nbsp;$(".test").hide();
+  &nbsp;&nbsp;&nbsp;});
+  });</code>
+         </p>
+      </article>
+    </section>
+<hr>
+
+    <section class="main-section" id="jQuery_Events">
+      <header>jQuery Events</header>
+       <article>
+         <p>jQuery is tailor-made to respond to events in an HTML page.</p><br>
+         <h3>What are Events?</h3>
+         <p>
+All the different visitors' actions that a web page can respond to are called events.
+<br><br>
+An event represents the precise moment when something happens.
+<br><br>
+Examples:
+   <ul>
+    <li>moving a mouse over an element</li>
+    <li>selecting a radio button</li>
+    <li>clicking on an element</li>
+   </ul>
+          The term <strong>"fires/fired"</strong> is often used with events. Example: "The keypress event is fired, the moment you press a key".
+<br><br>
+         Here are some common DOM events:</p>
+      
+      <table id="Event_table"class="table table-striped table-light">
+        <thead>
+          <tr>
+            <th scope="col">Mouse Events</th>
+            <th scope="col">Keyboard Events</th>
+            <th scope="col">Form Events</th>
+            <th scope="col">Document/Window Events</th>
+          </tr>
+       </thead>  
+        <tbody>
+          <tr>
+            <td scope="row">click</td>
+            <td>keypress</td>
+            <td>submit</td>
+            <td>load</td>
+          </tr>
+            <tr>
+            <td scope="row">dblclick</td>
+            <td>keydown</td>
+            <td>change</td>
+            <td>resize</td>
+          </tr>
+            <tr>
+            <td scope="row">mouseenter</td>
+            <td>keyup</td>
+            <td>focus</td>
+            <td>scroll</td>
+          </tr>
+            <tr>
+            <td scope="row">mouseleave</td>
+            <td> </td>
+            <td>blur</td>
+            <td>unload</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>jQuery Syntax For Event Methods</h3>
+      <br>
+<p>In jQuery, most DOM events have an equivalent jQuery method.
+<br>
+To assign a click event to all paragraphs on a page, you can do this:
+<br>
+  <code>$("p").click();  </code>
+  
+The next step is to define what should happen when the event fires. You must pass a function to the event:
+
+  <code>$("p").click(<span style="color:blue;">function</span>(){
+  &nbsp;&nbsp;// action goes here!!
+});</code>
+      </p>   
+      
+      <h3>Commonly Used jQuery Event Methods</h3>
+      <p><br>
+        <strong>$(document).ready()</strong>
+<br><br>
+        The <span class="action tagstyle">$(document).ready()</span> method allows us to execute a function when the document is fully loaded. This event is already explained in the jQuery Syntax chapter.
+<br><br>
+        <strong>click()</strong>
+<br><br>
+The <span class="action tagstyle">click()</span> method attaches an event handler function to an HTML element.
+<br>
+The function is executed when the user clicks on the HTML element.
+<br>
+        The following example says: When a click event fires on a <span class="action tagstyle">&ltp&gt</span>element; hide the current <span class="action tagstyle">&ltp&gt</span> element:
+
+        <strong>Example:</strong>
+        
+        <code>$("p").click(<span style="color:blue;">function</span>(){
+          &nbsp;&nbsp;$(<span style="color:blue;">this</span>).hide();
+});        </code>
+      </p>
+      
+      <p>
+      <strong>dblclick()</strong>
+<br><br>
+  The <span class="action tagstyle">dblclick()</span> method attaches an event handler function to an HTML element.
+<br>
+The function is executed when the user double-clicks on the HTML element:
+<br>
+  <strong>Example:</strong>
+  <code>$("p").dblclick(<span style="color:blue;">function</span>(){
+    &nbsp;&nbsp;$(<span style="color:blue;">this</span>).hide();
+    });</code>
+      </p>
+      
+    <p> 
+  <strong>mouseenter()</strong>
+<br><br>
+      The<span class="action tagstyle">mouseenter()</span> method attaches an event handler function to an HTML element.
+<br>
+The function is executed when the mouse pointer enters the HTML element:
+<br>
+      <strong>Example:</strong>
+      <code>$("#p1").mouseenter((<span style="color:blue;">function</span>(){
+  &nbsp;&nbsp;alert("You entered p1!");
+        });</code>
+      </p>
+      
+      <p>
+        <strong>mouseleave()</strong>
+<br><br>
+        The <span class="action tagstyle">mouseleave()</span> method attaches an event handler function to an HTML element.
+<br>
+The function is executed when the mouse pointer leaves the HTML element:
+<br>
+<strong>Example:</strong>
+ <code> $("#p1").mouseleave(<span style="color:blue;">function</span>(){
+   &nbsp;&nbsp;alert("Bye! You now leave p1!");
+});</code>
+      </p>
+      
+      <p>
+        <strong>mousedown()</strong>
+<br><br>
+        The <span class="action tagstyle">mousedown()</span> method attaches an event handler function to an HTML element.
+<br>
+The function is executed, when the left, middle or right mouse button is pressed down, while the mouse is over the HTML element:
+<br>
+        <strong>Example:</strong>
+        <code>$("#p1").mousedown(<span style="color:blue;">function</span>(){
+  &nbsp;&nbsp;alert("Mouse down over p1!");
+  });</code>
+      </p>
+      
+      <p>
+        <strong>mouseup()</strong>
+<br><br>
+        The <span class="action tagstyle">mouseup()</span> method attaches an event handler function to an HTML element.
+<br>
+The function is executed, when the left, middle or right mouse button is released, while the mouse is over the HTML element:
+<br>
+        <strong>Example:</strong>
+        <code>$("#p1").mouseup(<span style="color:blue;">function</span>(){
+  &nbsp;&nbsp;alert("Mouse up over p1!");
+          });</code>
+      </p>
+      
+      <p>
+        <strong>hover()</strong>
+<br><br>
+        The <span class="action tagstyle">hover()</span> method takes two functions and is a combination of the <span class="action tagstyle">mouseenter()</span> and <span class="action tagstyle">mouseleave()</span> methods.
+<br>
+The first function is executed when the mouse enters the HTML element, and the second function is executed when the mouse leaves the HTML element:
+<br>
+        <strong>Example:</strong>
+        
+        <code>$("#p1").hover(<span style="color:blue;">function</span>(){
+  &nbsp;&nbsp;alert("You entered p1!");
+},
+          <span style="color:blue;">function</span>(){
+  &nbsp;&nbsp;alert("Bye! You now leave p1!");
+          });</code>
+          </p>
+      <p>
+        <strong>focus()</strong>
+<br><br>
+        The <span class="action tagstyle">focus()</span> method attaches an event handler function to an HTML form field.
+<br>
+The function is executed when the form field gets focus:
+<br>
+        <strong>Example:</strong>
+   <code>$("input").focus(<span style="color:blue;">function</span>(){
+     &nbsp;&nbsp; $(<span style="color:blue;">this</span>).css("background-color", "#cccccc");
+});</code>
+      </p>
+      
+      <p>
+        <strong>blur()</strong>
+<br><br>
+        The <span class="action tagstyle">blur()</span> method attaches an event handler function to an HTML form field.
+<br>
+The function is executed when the form field loses focus:
+<br>
+        <strong>Example:</strong>
+        
+<code>$("input").blur(<span style="color:blue;">function</span>(){
+  &nbsp;&nbsp;$(<span style="color:blue;">this</span>).css("background-color", "#ffffff");
+  });
+    </code>
+   </p>
+      
+  <p>    
+    <strong>The on() Method</strong>
+    <br><br>
+    The <span class="action tagstyle">on()</span> method attaches one or more event handlers for the selected elements.
+<br>
+    Attach a click event to a <span class="action tagstyle">&ltp&gt</span> element:
+<br>
+    <strong>Example:</strong>
+    <br>
+    <code>$("p").on("click", <span style="color:blue;">function</span>(){
+      &nbsp;&nbsp;$(<span style="color:blue;">this</span>).hide();
+  });</code>
+      </p>
+      </article>
+    </section>
+
+
+<hr>
+    <section class="main-section" id="jQuery_Effect_Hide_Show">
+      <header>jQuery Effect - Hide/Show</header>
+       <article>
+         <h3> jQuery hide() and show()</h3>
+<p>With jQuery, you can hide and show HTML elements with the <span class="action tagstyle">hide()</span> and <span class="action tagstyle">show()</span> methods:
+            <br><br>
+              <strong>Example:</strong><br>
+  <code>    $("#hide").click(<span style="color:blue;">function</span>(){
+            $("p").hide();
+           });
+    $("#show").click(<span style="color:blue;">function</span>(){
+            $("p").show();
+           }); </code>
+         </p>
+         <br>
+         <p>
+           
+        <strong>Syntax:</strong>
+
+<code>$(selector).hide(speed,callback);
+     
+$(selector).show(speed,callback);</code>
+      <br>
+The optional speed parameter specifies the speed of the hiding/showing, and can take the following values: "slow", "fast", or milliseconds.
+      <br><br>
+The optional callback parameter is a function to be executed after the <span class="action tagstyle">hide()</span> or <span class="action tagstyle">show()</span> method completes (you will learn more about callback functions in a later chapter).
+      <br><br>
+The following example demonstrates the speed parameter with <span class="action tagstyle">hide()</span>:
+      <br>
+         </p>
+     <p>
+       <strong>Example:</strong>
+       <br>
+      <code> $("button").click(<span style="color:blue;">function</span>(){
+           $("p").hide(1000);
+        });</code>
+         
+         <h3>jQuery toggle()</h3>
+          You can also toggle between hiding and showing an element with the <span class="action tagstyle">toggle()</span> method.
+<br>
+              Shown elements are hidden and hidden elements are shown:
+<br>
+           <strong>Example:</strong>
+           <code>$("button").click(<span style="color:blue;">function</span>(){
+              $("p").toggle();
+              });</code>
+           
+         <br><strong>Syntax:</strong>
+<br>
+         <code>$(selector).toggle(speed,callback);</code>
+           <br>
+The optional speed parameter can take the following values: "slow", "fast", or milliseconds.
+<br><br>
+The optional callback parameter is a function to be executed after <span class="action tagstyle">toggle()</span> completes.
+         </p>
+      </article>
+    </section>
+<hr>
+    <section class="main-section" id="jQuery_Effect_Fade">
+      <header>jQuery Effect - Fade</header>
+       <article>
+         <p>With jQuery you can fade elements in and out of visibility.</p>
+         <h3> Query Fading Methods</h3>
+<p>With jQuery you can fade an element in and out of visibility.
+<br>
+jQuery has the following fade methods:
+<br>
+<ul>
+  <li><span class="action tagstyle">fadeIn()</span></li>
+  <li><span class="action tagstyle">fadeOut()</span></li>
+  <li><span class="action tagstyle">fadeToggle()</span></li>
+  <li><span class="action tagstyle">fadeTo()</span></li>
+  </p>
+         
+         <h3>jQuery fadeIn() Method</h3>
+   <p>      
+The jQuery <span class="action tagstyle">fadeIn()</span> method is used to fade in a hidden element.
+<br>
+     <strong>Syntax:</strong>
+<code>$(selector).fadeIn(speed,callback);</code>
+     
+The optional speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds.
+<br>
+The optional callback parameter is a function to be executed after the fading completes.
+<br>
+The following example demonstrates the <span class="action tagstyle">fadeIn()</span> method with different parameters:
+<br>
+<strong>Example:</strong>
+     <code>$("button").click(<span style="color:blue;">function</span>(){
+    $("#div1").fadeIn();
+    $("#div2").fadeIn("slow");
+    $("#div3").fadeIn(3000);
+  });</code>
+         </p>
+         
+   <h3>jQuery fadeOut() Method</h3>
+
+  <p>The jQuery fadeOut() method is used to fade out a visible element.
+<br>
+    <strong>Syntax:</strong>
+<code> $(selector).fadeOut(speed,callback);</code>
+<br>
+The optional speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds.
+<br><br>
+The optional callback parameter is a function to be executed after the fading completes.
+<br><br>
+    The following example demonstrates the <span class="action tagstyle">fadeOut()</span> method with different parameters:
+<br>
+<strong>Example:</strong>
+    <code>$("button").click(<span style="color:blue;">function</span>(){
+      $("#div1").fadeOut();
+      $("#div2").fadeOut("slow");
+      $("#div3").fadeOut(3000);
+  });</code>
+         </p>
+         
+         
+         <h3>jQuery fadeToggle() Method</h3>
+         <p>
+           The jQuery <span class="act</span>ion tagstyle">fadeToggle()</span> method toggles between the <span class="action tagstyle">fadeIn()</span> and <span class="action tagstyle">fadeOut()</span> methods.
+<br>
+         If the elements are faded out, <span class="action tagstyle">fadeToggle()</span> will fade them in.
+<br>
+         If the elements are faded in, <span class="action tagstyle">fadeToggle()</span> will fade them out.
+<br>
+         <strong>Syntax:</strong>
+<code>$(selector).fadeToggle(speed,callback);</code>
+  <br>
+The optional speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds.
+<br><br>
+The optional callback parameter is a function to be executed after the fading completes.
+<br><br>
+The following example demonstrates the <span class="action tagstyle">fadeToggle()</span> method with different parameters:
+<br>
+     
+<strong>Example:</strong>
+           
+           <code>$("button").click(<span style="color:blue;">function</span>(){
+    $("#div1").fadeToggle();
+    $("#div2").fadeToggle("slow");
+    $("#div3").fadeToggle(3000);
+  });</code>
+         </p>
+         
+         <h3>jQuery fadeTo() Method</h3>
+         <p>
+           The jQuery <span class="action tagstyle">fadeTo()</span> method allows fading to a given opacity (value between 0 and 1).
+<br>
+           <strong>Syntax:</strong>
+<code> $(selector).fadeTo(speed,opacity,callback);</code>
+ <br>          
+The required speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds.
+<br><br>
+The required opacity parameter in the <span class="action tagstyle">fadeTo()</span> method specifies fading to a given opacity (value between 0 and 1).
+<br><br>
+The optional callback parameter is a function to be executed after the function completes.
+<br><br>
+           The following example demonstrates the <span class="action tagstyle">fadeTo()</span> method with different parameters:
+<br>
+<strong>Example:</strong>
+           <code>$("button").click(<span style="color:blue;">function</span>(){
+    $("#div1").fadeTo("slow", 0.15);
+    $("#div2").fadeTo("slow", 0.4);
+    $("#div3").fadeTo("slow", 0.7);
+  });</code>
+      </article>
+    </section>
+<hr>
+    <section class="main-section" id="jQuery_Effect_Slide">
+      <header>jQuery Effect - Slide</header>
+       <article>
+         
+         
+         <p>The jQuery slide methods slide elements up and down.</p>
+         
+         <h3>jQuery Sliding Methods</h3>
+
+         <p>With jQuery you can create a sliding effect on elements.
+           <br><br>
+           jQuery has the following slide methods:</p>
+<ul>
+  <li><span class="action tagstyle">slideDown()</span></li>
+  <li><span class="action tagstyle">slideUp()</span></li>
+  <li><span class="action tagstyle">slideToggle()</span></li>
+ </ul>
+   <br>      
+         <h3>jQuery slideDown() Method</h3>
+         <p>The jQuery <span class="action tagstyle">slideDown()</span> method is used to slide down an element.
+<br><br>
+           <strong>Syntax:</strong>
+
+           <code>$(selector).slideDown(speed,callback);</code>
+The optional speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds.<br>
+
+The optional callback parameter is a function to be executed after the sliding completes.
+<br>
+           The following example demonstrates the <span class="action tagstyle">slideDown()</span> method:
+<br>
+<strong>Example:</strong>
+           <code>$("#flip").click(<span style="color:blue;">function</span>(){
+      $("#panel").slideDown();
+  });</code>
+         </p>   
+         
+         <h3>jQuery slideUp() Method</h3>
+         <p>The jQuery <span class="action tagstyle">slideUp()</span> method is used to slide up an element.
+<br>
+           <strong>Syntax:</strong>
+           <code>$(selector).slideUp(speed,callback);</code>
+           <br>
+The optional speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds.
+<br>
+The optional callback parameter is a function to be executed after the sliding completes.
+<br><br>
+           The following example demonstrates the <span class="action tagstyle">slideUp()</span> method:
+<br>
+           <strong>Example:</strong>
+           <code>$("#flip").click(<span style="color:blue;">function</span>(){
+  $("#panel").slideUp();
+  });</code>
+         </p>
+         
+         <h3>jQuery slideToggle() Method</h3>
+         <p>The jQuery <span class="action tagstyle">slideToggle()</span> method toggles between the <span class="action tagstyle">slideDown()</span> and <span class="action tagstyle">slideUp()</span> methods.
+<br>
+           If the elements have been slid down, <span class="action tagstyle">slideToggle()</span> will slide them up.
+<br><br>
+           If the elements have been slide up, <span class="action tagstyle">slideToggle()</span> will slide them down.
+<br><br>
+                      <code>$(selector).slideToggle(speed,callback);</code>
+           <br>
+The optional speed parameter can take the following values: "slow", "fast", milliseconds.
+<br><br>
+The optional callback parameter is a function to be executed after the sliding completes.
+<br><br>
+           The following example demonstrates the <span class="action tagstyle">slideToggle()</span> method:
+<br>
+ <strong>Example:</strong>
+           <code>$("#flip").click(<span style="color:blue;">function</span>(){
+  $("#panel").slideToggle();
+  });</code>
+
+      </article>
+    </section>
+<hr>
+     <section class="main-section" id="jQuery_Effect_Animate">
+      <header>jQuery Effect - Animate</header>
+        <article>
+          <p>With jQuery, you can create custom animations.</p>
+          <br>
+          <h3>jQuery Animations - The animate() Method</h3>
+<p>The jQuery <span class="action tagstyle">animate()</span> method is used to create custom animations.
+<br>
+          <strong>Syntax:</strong>
+
+  <code>$(selector).animate({params},speed,callback);</code>
+<br>  
+The required params parameter defines the CSS properties to be animated.
+<br><br>
+The optional speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds.
+<br><br>
+The optional callback parameter is a function to be executed after the animation completes.
+<br><br>
+  The following example demonstrates</span> a simple use of the <span class="action tagstyle">animate()</span> method; it moves a &ltdiv&gt element to the right, until it has reached a left property of 250px:
+<br>
+          <strong>Example:</strong>
+          <code>$("button").click(<span style="color:blue;">function</span>(){
+  $("div").animate({left: '250px'});
+            }); </code>
+      </article>
+    </section> 
+<hr>
+    <section class="main-section" id="jQuery_Effect_Stop">
+      <header>jQuery Effect - stop()</header>
+       <article>
+         <p>   The jQuery stop() method is used to stop animations or effects before it is finished.</p>
+         <br>
+         <h3>jQuery stop() Method</h3>
+         <p>The jQuery <span class="action tagstyle">stop()</span> method is used to stop an animation or effect before it is finished.
+<br><br>
+           The <span class="action tagstyle">stop()</span> method works for all jQuery effect functions, including sliding, fading and custom animations.
+<br>
+           <strong>Syntax:</strong>
+
+  <code>$(selector).stop(stopAll,goToEnd);</code>
+           <br>
+The optional stopAll parameter specifies whether also the animation queue should be cleared or not. Default is false, which means that only the active animation will be stopped, allowing any queued animations to be performed afterwards.
+<br><br>
+The optional goToEnd parameter specifies whether or not to complete the current animation immediately. Default is false.
+<br><br>
+           So, by default, the <span class="action tagstyle">stop()</span> method kills the current animation being performed on the selected element.
+<br><br>
+           The following example demonstrates the <span class="action tagstyle">stop()</span> method, with no parameters:
+<br>
+           <strong>Example:</strong>
+<code>$("#stop").click(function(){
+  $("#panel").stop();
+  });</code>
+         </p>
+      </article>
+    </section>
+<hr>
+    <section class="main-section" id="jQuery_Effect_Callback">
+      <header>jQuery Effect - Callback</header>
+       <article>
+        <p>A callback function is executed after the current effect is 100% finished.
+         </p>
+         <h3>jQuery Callback Functions</h3>
+         
+<p>JavaScript statements are executed line by line. However, with effects, the next line of code can be run even though the effect is not finished. This can create errors.
+<br><br>
+To prevent this, you can create a callback function.
+<br<br>
+A callback function is executed after the current effect is finished.
+<br><br>
+  Typical syntax:<strong> $(selector).hide(speed,callback);</strong>
+<br><br>
+  <strong>Examples:</strong>
+<br>
+The example below has a callback parameter that is a function that will be executed after the hide effect is completed:
+<br><br>
+  <strong>Example with Callback:</strong>
+<code>$("button").click(function(){
+  $("p").hide("slow", function(){
+    alert("The paragraph is now hidden");
+  });
+  });</code>
+<br>
+         The example below has no callback parameter, and the alert box will be displayed before the hide effect is completed:
+<br><br>
+  <strong>Example without Callback:</strong>
+<code>$("button").click(function(){
+  $("p").hide(1000);
+  alert("The paragraph is now hidden");
+  });</code>
+      </article>
+    </section>
+<hr>
+     <section class="main-section" id="jQuery_Effect_Chaining">
+      <header>jQuery Effects - Chaining</header>
+        <article>
+        <p>With jQuery, you can chain together actions/methods.
+<br>
+Chaining allows us to run multiple jQuery methods (on the same element) within a single statement.
+          </p>      
+          <h3>jQuery Method Chaining</h3>
+<p>Until now we have been writing jQuery statements one at a time (one after the other).
+<br><br>
+However, there is a technique called chaining, that allows us to run multiple jQuery commands, one after the other, on the same element(s).
+<br><br>
+Tip: This way, browsers do not have to find the same element(s) more than once.
+<br><br>
+To chain an action, you simply append the action to the previous action.
+<br><br>
+  The following example chains together the <span class="action tagstyle">css()</span>, <span class="action tagstyle">slideUp()</span>, and <span class="action tagstyle">slideDown()</span> methods. The "p1" element first changes to red, then it slides up, and then it slides down:
+<br><br>
+  <strong>Example:</strong>
+  <code>$("#p1").css("color", "red").slideUp(2000).slideDown(2000);</code>
+      </article>
+    </section>
+<hr>
+  </main>
+</body>
+</html>
